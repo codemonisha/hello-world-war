@@ -11,7 +11,23 @@ pipeline {
          stage('build') {
             steps {
                 sh 'mvn package '
+
             }
         }
+       stage('Push artifacts into artifactory') {
+           steps { 
+               rtUpload ( 
+                   serverId: 'myartifactory', 
+                   spec: '''{ 
+                       "files": [ 
+                           { 
+                               "pattern": "*.war", 
+                                "target": "example-repo-local/" 
+                   } 
+                   ] 
+                   }''' 
+               )	 
+           }	
+       }     
       }
 }
