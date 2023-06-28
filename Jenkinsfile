@@ -33,7 +33,7 @@ pipeline {
        }
                 stage('copy to tomcat ') {
                     steps {
-                      sh ' sudo cp /var/lib/jenkins/workspace/23sec/target/hello-world-war-2.0.3.war /opt/apache-tomcat-8.5.90/webapps/ '    
+                      sh ' cp /var/lib/jenkins/workspace/23sec/target/hello-world-war-2.0.3.war /opt/apache-tomcat-8.5.90/webapps/ '    
             }
        }
    }
