@@ -19,7 +19,7 @@ pipeline {
        stage('Push artifacts into artifactory') {
            steps { 
                rtUpload ( 
-                   serverId: 'myartifactory1', 
+                   serverId: 'myartifactory2', 
                    spec: '''{ 
                        "files": [ 
                            { 
