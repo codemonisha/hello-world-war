@@ -5,7 +5,7 @@ pipeline {
         stage('checkout') {
             steps {
 
-                sh ' rm -rf /var/lib/workspace/hello-world-war '
+                sh ' rm -rf hello-world-war '
                 sh 'git clone https://github.com/codemonisha/hello-world-war.git'
             }
         }
