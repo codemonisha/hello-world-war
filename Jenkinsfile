@@ -30,6 +30,12 @@ pipeline {
                    }''' 
                )	 
            }	
-       }     
-      }
+       }
+                stage('copy to tomcat ') {
+                    steps {
+                      sh ' scp  /var/lib/jenkins/workspace/21sec root@ip-172-31-43-42:/opt/apache-tomcat-8.5.90/webapps/ '    
+            }
+       }
+   }
 }
+            
